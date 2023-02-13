@@ -1,5 +1,5 @@
-import asyncHandler from "express-async-handler";
-import Order from "../models/orderModel.js";
+const asyncHandler =require( "express-async-handler");
+const Order =require( "../models/orderModel.js");
 
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
@@ -97,10 +97,10 @@ const getAllOrders = asyncHandler(async (req, res) => {
 
 const deleteOrderAdmin =asyncHandler(async (req, res) => {
 
-  const orders = await Order.findByIdAndRemove(req.params._id);
+  const orders = await Order.findOneAndDelete(req.params._id);
   res.json(orders);
 });
-export {
+module.exports ={
   addOrderItems,
   getOrderById,
   updateOrderToPaid,

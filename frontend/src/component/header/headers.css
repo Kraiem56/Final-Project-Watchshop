@@ -1,0 +1,63 @@
+li{
+  list-style: none;
+  font-size: 40px;
+}
+nav{
+  background-color: black;
+ display: flex;
+ width: 100%;
+ /* position:fixed; */
+ color: white;
+ justify-content:space-between;
+ width: 100%;
+ height: 60px;
+}
+.iconss{
+  flex: 0;
+  display: flex;
+  margin-top: 15px;
+
+}
+span{
+  font-size: 15px;
+  padding: 5px;
+  margin-left: 2px;
+  color: white;
+}
+
+.logo{
+  flex: 1;
+  width: 150px;
+  height: 60px;
+  margin-left: 30px;
+}
+.logo:hover{
+ 
+  cursor: pointer;
+}
+
+.serch {
+  margin-top: 20px;
+  
+}
+#AccountBoxIcon {
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px 0px 20px;
+  color: white;
+  /* background-color: white; */
+}
+#ShoppingCartIcon{
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px 0px 20px;
+  color: white;
+  /* background-color: white; */
+}
+#SearchIcon{
+    width: 30px;
+  height: 30px;
+  margin: 0px 5px 0px 20px;
+  color: white;
+  /* background-color: white; */
+}

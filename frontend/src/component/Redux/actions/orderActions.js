@@ -136,15 +136,9 @@ export const deliveredOrder = (orderId) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.put(
-      `/api/orders/${orderId}/deliver`,
-      {},
-      config
-    );
-
     dispatch({
       type: ORDER_DELIVERED_SUCCESS,
-    });
+    },config);
   } catch (error) {
     dispatch({
       type: ORDER_PAY_FAIL,
@@ -188,7 +182,7 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => {
   try {
     const { data } = axios.delete(`/api/orders/delete/${orderId}`, {
       headers: { "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,},
+      Authorization: `Bearer ${token}`},
     });
     dispatch({ type: ORDER_DELETE_SUCCESS, payload: data });
   } catch (error) {

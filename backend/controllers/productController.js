@@ -1,5 +1,5 @@
-import asyncHandler from "express-async-handler";
-import Products from "../models/productModel.js";
+const asyncHandler =require( "express-async-handler");
+const Products =require( "../models/productModel.js");
 
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Products({
@@ -7,7 +7,7 @@ const createProduct = asyncHandler(async (req, res) => {
     price: 0,
     user: req.user._id,
     image: "/images/sample.jpeg",
-    brand: "Oyo",
+    brand: "20",
     category: "Sample Category",
     countInStock: 10,
     numReviews: 0,
@@ -135,8 +135,7 @@ const getTopRatedProducts = asyncHandler(async (req, res) => {
   res.status(200).json(products);
 });
 
-export {
-  getProducts,
+module.exports={getProducts,
   getProductById,
   deleteProductById,
   createProduct,

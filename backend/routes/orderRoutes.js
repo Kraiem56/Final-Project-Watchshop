@@ -1,5 +1,5 @@
-import express from "express";
-import {
+const express =require( "express");
+const {
   addOrderItems,
   getAllOrders,
   getLoggedInUserOrders,
@@ -7,8 +7,8 @@ import {
   updateOrderToDelivered,
   updateOrderToPaid,
   deleteOrderAdmin,
-} from "../controllers/orderController.js";
-import { admin, protectRoute } from "../middleware/authMiddleware.js";
+} =require( "../controllers/orderController.js");
+const { admin, protectRoute } =require( "../middleware/authMiddleware.js");
 const router = express.Router();
 
 router
@@ -22,5 +22,4 @@ router.route("/:id/deliver").put(protectRoute, updateOrderToDelivered);
 router.route("/delete/:id").delete(protectRoute, admin, deleteOrderAdmin);
 
 
-
-export default router;
+module.exports =router;
